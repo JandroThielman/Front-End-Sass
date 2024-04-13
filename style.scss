@@ -1,0 +1,238 @@
+$black : rgb(50, 50, 50);
+$yellow : #FAFF00;
+$white : white;
+$title : 7rem;
+
+@mixin projectHover {
+
+    .header1:hover, .header2:hover, .header3:hover{
+        border: 2px solid rgb(253, 149, 149);
+        box-shadow: 0px 0px 10px 5px rgb(255, 3, 3);
+    }
+
+}
+
+@mixin flex {
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+@font-face {
+    font-family: KumarOne;
+    src: url(./assets/KumarOne.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: kumarOne;
+    cursor: url('./assets/ufo-cursor.png'), auto;
+}
+
+nav{
+    width: 98.9vw;
+    height: 9vh;
+    background-color: red;
+    border-bottom: 7px solid rgb(177, 0, 0);
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    top: 0;
+
+    .logo{
+        width: 7vw;
+        height: 9vh;
+        margin-top: .8vh;
+    }
+
+    ul{
+        display: grid;
+        grid-template-columns: 14vw 13vw 15.5vw 16.2vw;
+        width: 10vw;
+    }
+    
+    li,a{
+        font-size: 2.29rem;
+        list-style: none;
+        text-decoration: none;
+        color: $yellow;
+        padding: .07rem 1.3rem .07rem 1.3rem;
+
+        &:hover{
+            background-color: $black;
+        }
+    }
+    
+    .active{
+        background-color: $black;
+    }
+}
+
+.home-body{
+    background-image: url(./assets/home-bg.png);
+    background-size: 100%;
+    background-position-y: -20px;
+
+    .main-tekst{
+        @include flex();
+        margin-top: 12vh;
+
+        .home-name{
+            font-size: 11rem;
+            color: $white;
+        }
+
+        .home-tekst{
+            font-size: 2rem;
+            color: $white;
+        }
+    }
+
+    .home-footer{
+        width: 98.9vw;
+        height: 25vh;
+        background-color: $black;
+        margin-top: 28vh;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        color: $white;
+        font-size: 1.5rem;
+    }
+    
+}
+
+.skills-body{
+    background-image: url(./assets/skills-bg.png);
+    background-size: 100%;
+    background-position-y: -50px;
+
+    .skills-title{
+        color: $white;
+        font-size: $title;
+        letter-spacing: .5rem;
+        text-align: center;
+        margin: 0;
+        margin-top: 5vh;
+    }
+    
+    .article-skills{
+        height: 50vh;
+        width: 30vw;
+        margin-left: 38.8vw;
+
+        .skills-list{
+            color: $white;
+            text-align: left;
+            font-size: 2rem;
+        }
+        
+        .skills-stars{
+            color: $yellow;
+            text-shadow: 1px 1px 3px $yellow;
+        }
+    }
+}
+
+.body-project{
+    $project-width : 30vw;
+    $project-height : 70vh;
+    background-image: url(./assets/project-bg.png);
+    background-size: 100%;
+
+    .project-title{
+        color: $white;
+        font-size: $title;
+        text-align: center;
+    }
+
+    .main-project{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    @include projectHover();
+
+    .header1{
+        width: $project-width;
+        height: $project-height;
+        background-color: $black;
+        margin-right: 2vw;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        color: $yellow;
+
+        .project1{
+            width: $project-width;
+        }
+    }
+    
+    .header2{
+        @extend .header1;
+        @include flex();
+        justify-content: center;
+
+        .project2{
+            height: 40vh;
+        }
+    }
+    
+    .header3{
+        @extend .header1;
+        @include flex();
+        justify-content: center;
+
+        .project3{
+            width: $project-width;
+        }
+    }
+    
+}
+
+.contact-body{
+    background-image: url(./assets/contact-bg.jpg);
+    background-size: 100%;
+
+    .contact-title{
+        font-size: $title;
+        text-align: center;
+        color: $white;
+        margin-top: 15vh;
+    }
+
+    .social-media{
+        margin-left: 17vw;
+    }
+
+    .social{
+        width: 15vw;
+        margin-right: 5vw;
+    }
+
+    .social:hover{
+        opacity: .9;
+    }
+}
+
+.footer-skills{
+    width: 98.9vw;
+    height: 25vh;
+    background-color: $black;
+    margin-top: 15vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    color: $white;
+    font-size: 1.5rem;
+}
